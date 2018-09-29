@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase} from '@angular/fire/database';
-import {Observable} from 'rxjs';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ValidatorService} from '../../services/validation.service';
 
@@ -12,10 +11,11 @@ import {ValidatorService} from '../../services/validation.service';
 export class IntroComponent implements OnInit {
 
   emailForm: FormGroup;
-  isSubmitted: boolean = false;
+  isSubmitted: boolean;
 
 
   constructor(private db: AngularFireDatabase, private fb: FormBuilder, private validatorService: ValidatorService) {
+    this.isSubmitted = false;
   }
 
   ngOnInit() {
@@ -37,7 +37,7 @@ export class IntroComponent implements OnInit {
       });
       this.isSubmitted = true;
     } else {
-      this.emailForm.controls['email'].markAsTouched():
+      this.emailForm.controls['email'].markAsTouched();
     }
   }
 
