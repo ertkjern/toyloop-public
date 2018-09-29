@@ -1,12 +1,46 @@
 <section class="intro">
   <div class="container">
     <div class="row">
-      <h1 class="col-sm-12 col-md-8">En  helt ny måte å kjøpe leker på!</h1>
+      <div class="col-sm-12 col-md-8">
+        <h1>En helt ny måte å kjøpe leker på!</h1>
+        <p>Meld deg på vårt nyhetsbrev for å vite når du kan handle!</p>
+      </div>
     </div>
     <div class="row">
-      <div class="col-md-5">
-        <button class="about-us" type="button">Om oss</button>
+      <div class="col-sm-12 col-md-5">
+        <button id="getNews" class="news" type="button" data-toggle="modal" data-target="#exampleModal">Meld deg på vårt nyhetsbrev
+        </button>
       </div>
     </div>
   </div>
 </section>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Meld deg på vårt nyhetsbrev</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form [formGroup]='emailForm' (submit)="saveEmail(emailForm.value)" novalidate>
+        <div class="modal-body">
+          <h2 *ngIf="isSubmitted">Takk for din interesse!</h2>
+          <div *ngIf="!isSubmitted">
+            <label>Epost</label>
+            <input class="standard-input" type="text" formControlName="email" placeholder="Epost">
+            <div class="error"><span *ngIf="email.invalid && (email.dirty || email.touched)" translate>Du må angi en gyldig epost</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button *ngIf="isSubmitted" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button *ngIf="!isSubmitted" type="submit" class="add-button">Lagre</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

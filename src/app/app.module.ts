@@ -11,6 +11,12 @@ import { WhyComponent } from './home/why/why.component';
 import { FaqComponent } from './home/faq/faq.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ValidatorService} from './services/validation.service';
 
 @NgModule({
   declarations: [
@@ -24,11 +30,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     BrowserModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    ValidatorService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

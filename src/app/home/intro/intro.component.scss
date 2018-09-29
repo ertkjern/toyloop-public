@@ -15,20 +15,72 @@
     padding-top: 150px;
   }
 
-  .about-us{
+  p{
+    color: white;
+    margin-top: 15px;
+    font-size: 18px;
+  }
+}
+
+.news{
+  @include no-button-styling();
+  margin-top: 15px;
+  border: 2px solid $yellow;
+  border-radius: 3px;
+  font-size: 22px;
+  background-color: $yellow;
+  color: white;
+  width: auto;
+  padding: 15px 15px 15px 15px;
+  @media screen and (max-width: $md-screen) {
+    width: 100%;
+  }
+  @include standard-transition();
+  &:hover{
+    @include standard-transition();
+    background-color: rgba(235, 186, 22, 0.5);
+  }
+}
+
+.modal{
+  .modal-header{
+    border: none;
+  }
+  .modal-body{
+    border: none;
+  }
+  .modal-footer{
+    border: none;
+  }
+  label{
+    display: block;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .standard-input{
     @include no-button-styling();
-    margin-top: 35px;
+    height: 35px;
+    font-size: 22px;
+    min-width: 150px;
+    border: 2px solid $yellow;
+    padding-left: 10px;
+  }
+  .error{
+    color: red;
+    margin-top: 5px;
+  }
+  .add-button {
+    @include no-button-styling();
+    margin-top: 15px;
     border: 2px solid $yellow;
     border-radius: 3px;
     font-size: 22px;
     background-color: $yellow;
     color: white;
-    width: 150px;
-    height: 50px;
-    @include standard-transition();
-    &:hover{
-      @include standard-transition();
-      background-color: rgba(235, 186, 22, 0.5);
+    width: auto;
+    padding: 15px 15px 15px 15px;
+    @media screen and (max-width: $md-screen) {
+      width: 100%;
     }
   }
 }
