@@ -1,0 +1,34 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+
+.intro{
+  width: 100%;
+  height: 700px;
+  background-image: url('../../../assets/images/music.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  h1{
+    color: white;
+    font-size: 62px;
+    padding-top: 150px;
+  }
+
+  .about-us{
+    @include no-button-styling();
+    margin-top: 35px;
+    border: 2px solid $yellow;
+    border-radius: 3px;
+    font-size: 22px;
+    background-color: $yellow;
+    color: white;
+    width: 150px;
+    height: 50px;
+    @include standard-transition();
+    &:hover{
+      @include standard-transition();
+      background-color: rgba(235, 186, 22, 0.5);
+    }
+  }
+}

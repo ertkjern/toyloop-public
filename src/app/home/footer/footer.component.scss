@@ -1,0 +1,42 @@
+@import "../../../styles/variables";
+
+.footer{
+  width: 100%;
+  margin-top: 35px;
+  min-height: 300px;
+  box-shadow: #D3D9D9 0px 0px 2px 0px;
+  box-shadow: #D3D9D9 0px 0px 13px 0px;
+  background-color: $background-section;
+
+  h1{
+    opacity: 0; // accesibility header
+  }
+
+  .location{
+    color: $yellow;
+  }
+
+  h2{
+    img{
+      width: auto;
+      height: 50px;
+    }
+  }
+
+  .row{
+    margin-bottom: 10px;
+  }
+
+  a{
+    color: $yellow;
+    &:visited{
+      color: $yellow;
+    }
+  }
+
+  .icons{
+    float: right;
+    margin-top: 50px;
+    font-size: 14px;
+  }
+}

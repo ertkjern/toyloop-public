@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+
+.about{
+  margin-top: 35px;
+  h1{
+    color: $red;
+    text-align: center;
+  }
+  .how{
+    margin-top: 35px;
+    .how-text{
+      font-size: 22px;
+      padding-top: 5px;
+    }
+    @media screen and (max-width: $small-screen) {
+      text-align: center;
+    }
+  }
+}
